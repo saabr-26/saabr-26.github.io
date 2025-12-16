@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mohd Sabir — Portfolio</title>
+    <meta
+      name="description"
+      content="Mohd Sabir — Cybersecurity student portfolio"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700&family=Fira+Code:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#" aria-label="home">mohd-sabir</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-outline" href="resume_sabir - Copy.pdf">Resume</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          ☼
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-left">
+            <h1 class="name">MOHD SABIR</h1>
+            <p class="role">Offensive Research • Malware Analysis • CTF</p>
+
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#projects">Projects</a>
+              <a class="btn btn-ghost" href="#contact">Contact</a>
+              <a class="btn btn-outline" href="resume_sabir - Copy.pdf"
+                >Resume</a
+              >
+            </div>
+
+            <ul class="hero-stats">
+              <li><strong>Year:</strong><span>2nd Year — B.Tech CSE</span></li>
+              <li>
+                <strong>Focus:</strong><span>Malware · Crypto · Reversing</span>
+              </li>
+              <li><strong>Alias:</strong><span>saabr426</span></li>
+            </ul>
+
+            <div class="terminal card">
+              <pre id="terminalContent" class="terminal-pre">
+$ sudo whoami
+_</pre
+              >
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="card profile-card">
+              <div class="pic">
+                <!-- Simple avatar placeholder -->
+                <svg
+                  width="120"
+                  height="120"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="8"
+                    r="3.5"
+                    stroke="currentColor"
+                    stroke-width="0.8"
+                  />
+                  <path
+                    d="M4 20c0-3.3137 2.6863-6 6-6h4c3.3137 0 6 2.6863 6 6"
+                    stroke="currentColor"
+                    stroke-width="0.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="profile-meta">
+                <h3>Mohd Sabir</h3>
+                <p class="muted">Cybersecurity Student | saabr426</p>
+                <div class="meta-tags">
+                  <span>Cryptography</span>
+                  <span>Malware Analysis</span>
+                  <span>CTF</span>
+                </div>
+                <div class="socials">
+                  <a href="https://github.com/saabr-26" aria-label="GitHub"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://www.linkedin.com/in/mohd-sabir-693b89317/"
+                    aria-label="LinkedIn"
+                    >LinkedIn</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container">
+          <h2 class="section-title">About</h2>
+          <div class="about-grid">
+            <div class="card">
+              <h3>About Me</h3>
+              <p>
+                I'm Mohd Sabir (aka <em>saabr426</em>) — a 2nd year B.Tech CSE
+                student specializing in cybersecurity. I focus on practical
+                research, reversing and vulnerability analysis.
+              </p>
+              <p>
+                I build small tools, write walkthroughs and experiment with
+                security research. I’m learning by doing and sharing notes along
+                the way.
+              </p>
+              <p>
+                <strong>Current focus:</strong> Malware analysis, cryptography,
+                and applied CTF problems.
+              </p>
+            </div>
+
+            <div class="card box-highlight">
+              <h3>Education & Experience</h3>
+              <ul>
+                <li>B.Tech CSE — Cybersecurity specialization (in progress)</li>
+                <!-- <li>
+                  CliffGuard Cybersecurity — 3-month internship (research &
+                  tooling)
+                </li> -->
+                <li>Active in CTF competitions as <code>saabr426</code></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-sub">
+            Selected cybersecurity projects and research demos
+          </p>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="proj-head">SecureLearnViz</div>
+              <p class="proj-desc">
+                Interactive visualization platform to teach common
+                vulnerabilities and exploitation concepts.
+              </p>
+              <div class="proj-tags">
+                <span>React</span><span>D3</span><span>Security</span>
+              </div>
+              <div class="proj-cta">
+                <a href="#" class="btn btn-sm">Source</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="proj-head">Traceless-Delivery</div>
+              <p class="proj-desc">
+                Privacy-focused anonymous delivery research and simulation
+                (proof-of-concept).
+              </p>
+              <div class="proj-tags">
+                <span>Python</span><span>Crypto</span><span>Networking</span>
+              </div>
+              <div class="proj-cta">
+                <a href="#" class="btn btn-sm">Source</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="proj-head">Playground-Virus</div>
+              <p class="proj-desc">
+                Isolated research environment for analyzing malware behavior and
+                detection heuristics.
+              </p>
+              <div class="proj-tags">
+                <span>Assembly</span><span>Forensics</span>
+              </div>
+              <div class="proj-cta">
+                <a href="#" class="btn btn-sm">Source</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="section blog">
+        <div class="container">
+          <h2 class="section-title">Blog</h2>
+          <div class="card">
+            <h3>Latest post</h3>
+            <p class="muted">
+              So finally from getting the domain to creating the site — a short
+              writeup on building modern static sites and lessons learned.
+            </p>
+            <div class="blog-cta">
+              <a class="btn btn-primary" href="#">Visit Blog</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <div class="contact-grid">
+            <div class="card">
+              <h3>Get in touch</h3>
+              <p class="muted">
+                Open to collaboration and internships. Drop a message and I'll
+                reply.
+              </p>
+              <form
+                id="contactForm"
+                class="contact-form"
+                action="#"
+                onsubmit="return false;"
+              >
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your name" />
+                <label for="email">Email</label>
+                <input id="email" name="email" placeholder="you@example.com" />
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Hi Mohd Sabir..."
+                ></textarea>
+                <div class="form-actions">
+                  <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card box-highlight">
+              <h3>Contact Channels</h3>
+              <ul class="contact-list">
+                <li>
+                  GitHub:
+                  <a href="https://github.com/saabr-26">github.com/saabr-26</a>
+                </li>
+                <li>
+                  LinkedIn:
+                  <a href="https://www.linkedin.com/in/mohd-sabir-693b89317/"
+                    >linkedin.com/Sabir-26</a
+                  >
+                </li>
+                <li>
+                  Email:
+                  <a href="mailto:itssbn123@gmail.com">itssbn123@gmail.com</a>
+                </li>
+              </ul>
+              <p class="muted">
+                You can also download my resume from the Resume button in the
+                header.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year">2025</span> Mohd Sabir • saabr426</div>
+        <div class="footer-links">
+          <a href="#">Privacy</a><a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/scripts.js" defer></script>
+  </body>
+</html>
