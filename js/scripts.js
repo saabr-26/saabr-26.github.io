@@ -29,14 +29,63 @@
     });
   });
 
-  // Simple form submit (placeholder)
+  // Simple form submit — build a mailto link so users can email directly
   const form = document.getElementById("contactForm");
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert(
-        "Thanks! Message sending is disabled in this demo. Replace with your form backend or mailto."
-      );
+
+      const name = (document.getElementById("name") || {}).value || "";
+      const email = (document.getElementById("email") || {}).value || "";
+      const message = (document.getElementById("message") || {}).value || "";
+
+      if (!message.trim()) {
+        alert("Please enter a message before sending.");
+        return;
+      }
+
+      const to = "itssbn123@gmail.com"; // change to your preferred recipient
+      const subject = `Portfolio message from ${
+        name || email || "website visitor"
+      }`;
+      const bodyLines = [];
+      if (name) bodyLines.push(`Name: ${name}`);
+      if (email) bodyLines.push(`Email: ${email}`);
+      bodyLines.push("\nMessage:\n" + message);
+      const body = encodeURIComponent(bodyLines.join("\n\n"));
+
+      // Show a small success/status UI so user gets feedback before mailto
+      let statusEl = document.getElementById("contactFormStatus");
+      if (!statusEl) {
+        statusEl = document.createElement("div");
+        statusEl.id = "contactFormStatus";
+        // Minimal inline styles to avoid editing CSS file
+        statusEl.style.cssText =
+          "margin-top:12px;padding:10px;border-radius:6px;background:#e6ffed;border:1px solid #b7f0c7;color:#05400a;font-size:14px;";
+        statusEl.setAttribute("role", "status");
+        statusEl.setAttribute("aria-live", "polite");
+        const formActions = form.querySelector(".form-actions") || form;
+        formActions.parentNode.insertBefore(statusEl, formActions.nextSibling);
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      statusEl.textContent = "Opening mail client — preparing message...";
+
+      // Slight delay so the status is visible before the mail client opens
+      const mailto = `mailto:${to}?subject=${encodeURIComponent(
+        subject
+      )}&body=${body}`;
+      setTimeout(() => {
+        window.location.href = mailto;
+      }, 250);
+
+      // Clean up status and re-enable the button after a short while
+      setTimeout(() => {
+        if (statusEl && statusEl.parentNode)
+          statusEl.parentNode.removeChild(statusEl);
+        if (submitBtn) submitBtn.disabled = false;
+      }, 4000);
     });
   }
 
